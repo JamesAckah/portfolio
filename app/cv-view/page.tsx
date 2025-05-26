@@ -25,7 +25,7 @@ export default function CVViewPage() {
       </div>
 
       <div className="flex justify-center">
-        <iframe src="/james-cv.pdf" className="w-full h-screen" title="James Ackah-Blay CV" />
+        <iframe src="/James_cv_Remote.pdf" className="w-full h-screen" title="James Ackah-Blay CV" />
       </div>
     </div>
   )

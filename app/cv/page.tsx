@@ -15,7 +15,7 @@ export default function CVPage() {
     // Create a direct link to download the CV as a PDF
     const link = document.createElement("a")
     link.href = window.location.href
-    link.download = "James_Ackah-Blay_CV.pdf"
+    link.download = "James_cv_Remote.pdf"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -45,7 +45,7 @@ export default function CVPage() {
           <div className="flex flex-col md:flex-row items-start gap-6 border-b pb-6">
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200 flex-shrink-0">
               <Image
-                src="/james-profile.png"
+                src="/profile4.png"
                 alt="James Ackah-Blay"
                 width={128}
                 height={128}

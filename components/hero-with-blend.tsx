@@ -142,7 +142,7 @@ export default function HeroWithBlend() {
             className="w-full md:w-1/3 flex justify-center"
           >
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/30 ring-4 ring-primary/10">
-              <Image src="/james-profile.png" alt="James Ackah-Blay" fill className="object-cover" priority />
+              <Image src="/profile4.png" alt="James Ackah-Blay" fill className="object-cover" priority />
             </div>
           </motion.div>
         </div>

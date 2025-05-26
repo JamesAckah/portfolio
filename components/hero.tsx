@@ -114,7 +114,7 @@ export default function Hero() {
             {!imageError ? (
               <div className="w-full h-full relative">
                 <Image
-                  src="/profile_img.jpg"
+                  src="/profile4.png"
                   alt="James Ackah-Blay"
                   fill
                   className="object-cover"
