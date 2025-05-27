@@ -17,9 +17,10 @@ import {
 interface HeroProps {
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  isMenuOpen?: boolean;
 }
 
-export default function Hero({ open, onOpenChange }: HeroProps) {
+export default function Hero({ open, onOpenChange, isMenuOpen }: HeroProps) {
   const [typedText, setTypedText] = useState("")
   const fullText = "DevOps Engineer & IT Support Specialist"
 
@@ -33,7 +34,7 @@ export default function Hero({ open, onOpenChange }: HeroProps) {
   }, [typedText])
 
   return (
-    <section className="py-20 md:py-28 min-h-[90vh] flex items-center">
+    <section className={`py-20 md:py-28 min-h-[90vh] flex items-center ${isMenuOpen ? 'pt-40' : ''}`}>
       <div className="flex flex-col md:flex-row items-center gap-8">
         <div className="w-full md:w-2/3 space-y-6">
           <div className="space-y-2">

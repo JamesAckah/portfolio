@@ -6,9 +6,13 @@ import { ModeToggle } from "./mode-toggle"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export default function Navbar() {
+interface NavbarProps {
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const [isMobile, setIsMobile] = useState(false)
 
