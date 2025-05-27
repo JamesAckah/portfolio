@@ -155,7 +155,7 @@ export default function ElevatorPitch() {
                 {/* Placeholder image / Thumbnail */}
                 {(!isPlaying && (videoLoaded || isVideoReady)) && (
                   <Image
-                    src="/profile4.png" // Use the profile picture as the thumbnail
+                    src="/YouTube_Thumbnail.png" // Use the specified image as the video thumbnail
                     alt="Video Thumbnail"
                     fill // Use fill to cover the container
                     className="object-contain transition-opacity duration-500"
@@ -166,7 +166,7 @@ export default function ElevatorPitch() {
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
-                  poster="/elevated-pitch-thumbnail.png" // Keep poster for native controls fallback, but custom overlay will cover it
+                  poster="/YouTube_Thumbnaill.png" // Keep poster for native controls fallback, but custom overlay will cover it
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
                   onClick={handlePlayPause}
