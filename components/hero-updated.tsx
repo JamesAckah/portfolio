@@ -62,6 +62,10 @@ export default function Hero() {
               </a>
             </div>
             <div className="flex items-center gap-1">
+              <Mail size={16} />
+              <span>+233 542947685</span>
+            </div>
+            <div className="flex items-center gap-1">
               <Linkedin size={16} />
               <a
                 href="https://linkedin.com/in/james-ackah-blay"

@@ -61,6 +61,10 @@ export default function Hero() {
                 jamesblay80@gmail.com
               </a>
             </div>
+            <div className="flex items-center gap-1">
+              <Mail size={16} />
+              <span>+233 542947685</span>
+            </div>
             <div className="flex items-center gap-1 rounded hover:ring-2 hover:ring-primary hover:ring-opacity-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-all duration-200">
               <Linkedin size={16} />
               <a

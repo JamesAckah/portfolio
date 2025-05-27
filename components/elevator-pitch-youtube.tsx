@@ -155,7 +155,7 @@ export default function ElevatorPitch() {
                 {/* Placeholder image / Thumbnail */}
                 {(!isPlaying && (videoLoaded || isVideoReady)) && (
                   <Image
-                    src="/YouTube_Thumbnail.png" // Use the specified image as the video thumbnail
+                    src="/YouTube_Thumbnaill.png" // Use the specified image as the video thumbnail
                     alt="Video Thumbnail"
                     fill // Use fill to cover the container
                     className="object-contain transition-opacity duration-500"
