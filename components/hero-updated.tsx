@@ -4,9 +4,20 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Linkedin, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import CVDownloadButton from "./cv-download-button"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
-export default function Hero() {
+interface HeroProps {
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+export default function Hero({ open, onOpenChange }: HeroProps) {
   const [typedText, setTypedText] = useState("")
   const fullText = "DevOps Engineer & IT Support Specialist"
 
@@ -92,7 +103,23 @@ export default function Hero() {
             <Button variant="outline" asChild>
               <a href="#projects">View Projects</a>
             </Button>
-            <CVDownloadButton />
+            <Dialog open={open} onOpenChange={onOpenChange}>
+              <DialogTrigger asChild>
+                <Button variant="outline">Download CV</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Download CV</DialogTitle>
+                </DialogHeader>
+                <div className="flex justify-center">
+                  <Button asChild>
+                    <a href="/James_cv_Remote.pdf" download>
+                      Download PDF
+                    </a>
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
 
