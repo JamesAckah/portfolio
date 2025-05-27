@@ -168,9 +168,9 @@ export default function ElevatorPitch() {
                   className="w-full h-full object-cover"
                   poster="/elevated-pitch-thumbnail.png" // Keep poster for native controls fallback, but custom overlay will cover it
                   onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
+                  onPause={() => setIsPlaying(true)}
                   controls={false} // Hide default controls
-                  muted={true} // Start muted to avoid autoplay issues
+                  muted={false} // Start muted to avoid autoplay issues
                   playsInline
                   preload="metadata" // or "auto" or "none"
                 >
