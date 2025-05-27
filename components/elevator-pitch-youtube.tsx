@@ -4,6 +4,7 @@ import VideoTranscript from "./video-transcript"
 import { Button } from "@/components/ui/button"
 import { Play, Pause, Volume2, VolumeX } from "lucide-react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function ElevatorPitch() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -136,10 +137,7 @@ export default function ElevatorPitch() {
             Elevator <span className="text-primary">Pitch</span>
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 rounded"></div>
-          <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            Watch this guide on crafting the perfect elevator pitch for job interviews. Learn how to effectively
-            introduce yourself and make a strong first impression.
-          </p>
+         
         </div>
 
         <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
@@ -154,24 +152,24 @@ export default function ElevatorPitch() {
               </div>
             ) : (
               <>
-                {/* Placeholder image while video loads */}
-                <div
-                  className={`absolute inset-0 bg-black flex items-center justify-center transition-opacity duration-500 ${
-                    videoLoaded ? "opacity-0" : "opacity-100"
-                  }`}
-                >
-                  {/* Replace with a static placeholder if needed, or remove if not desired */}
-                  {/* <div className="w-full h-full bg-[url('/video-placeholder.png')] bg-cover bg-center opacity-70"></div> */}
-                </div>
+                {/* Placeholder image / Thumbnail */}
+                {(!isPlaying && (videoLoaded || isVideoReady)) && (
+                  <Image
+                    src="/video-placeholder.png" // Use a relevant placeholder image
+                    alt="Video Thumbnail"
+                    fill // Use fill to cover the container
+                    className="object-cover transition-opacity duration-500"
+                  />
+                )}
 
                 {/* Video element */}
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
-                  poster="/video-placeholder.png" // Optional: use a placeholder image
+                  poster="/elevated-pitch-thumbnail.png" // Keep poster for native controls fallback, but custom overlay will cover it
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
-                  controls={true} // Use default controls
+                  controls={false} // Hide default controls
                   muted={true} // Start muted to avoid autoplay issues
                   playsInline
                   preload="metadata" // or "auto" or "none"
@@ -180,35 +178,7 @@ export default function ElevatorPitch() {
                   Your browser does not support the video tag.
                 </video>
 
-                {/* Optional: Custom video controls if needed, removed for now */}
-                {/*
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-center">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-white hover:bg-white/20"
-                    onClick={handlePlayPause}
-                    disabled={!isVideoReady}
-                  >
-                    {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
-                  </Button>
-
-                  <div className="text-white text-sm font-medium">James Ackah-Blay - IT Support & DevOps Engineer</div>
-
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-white hover:bg-white/20"
-                    onClick={handleMute}
-                    disabled={!isVideoReady}
-                  >
-                    {isMuted ? <VolumeX className="h-6 w-6" /> : <Volume2 className="h-6 w-6" />}
-                  </Button>
-                </div>
-                */}
-
-                {/* Optional: Play button overlay if not using default controls */}
-                {/*
+                {/* Play button overlay */}
                 {!isPlaying && (videoLoaded || isVideoReady) && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Button
@@ -222,7 +192,6 @@ export default function ElevatorPitch() {
                     </Button>
                   </div>
                 )}
-                */}
               </>
             )}
           </div>
