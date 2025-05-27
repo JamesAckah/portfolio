@@ -18,8 +18,8 @@ export default function CVDialog() {
     try {
       // Create a direct link to the CV file in the public folder
       const link = document.createElement("a")
-      link.href = "/James_cv_Remote.pdf"
-      link.download = "James_cv_Remote.pdf"
+      link.href = "public/James_cv_Remote.pdf"
+      link.download = "public/James_cv_Remote.pdf"
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
