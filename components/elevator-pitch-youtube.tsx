@@ -140,7 +140,7 @@ export default function ElevatorPitch() {
          
         </div>
 
-        <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
+        <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-primary">
           {/* Video container */}
           <div className="aspect-video bg-black relative">
             {videoError ? (
@@ -155,7 +155,7 @@ export default function ElevatorPitch() {
                 {/* Placeholder image / Thumbnail */}
                 {(!isPlaying && (videoLoaded || isVideoReady)) && (
                   <Image
-                    src="/video-placeholder.png" // Use a relevant placeholder image
+                    src="/profile4.png" // Use the profile picture as the thumbnail
                     alt="Video Thumbnail"
                     fill // Use fill to cover the container
                     className="object-cover transition-opacity duration-500"
@@ -196,7 +196,6 @@ export default function ElevatorPitch() {
             )}
           </div>
         </div>
-                <VideoTranscript />
 
         <div className="text-center mt-8">
           <p className="text-gray-300 max-w-2xl mx-auto">

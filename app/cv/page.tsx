@@ -14,7 +14,7 @@ export default function CVPage() {
   const handleDownload = () => {
     // Create a direct link to download the CV as a PDF
     const link = document.createElement("a")
-    link.href = window.location.href
+    link.href = "/James_cv_Remote.pdf"
     link.download = "James_cv_Remote.pdf"
     document.body.appendChild(link)
     link.click()
