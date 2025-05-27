@@ -140,7 +140,7 @@ export default function ElevatorPitch() {
          
         </div>
 
-        <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-primary">
+        <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border-4 border-primary">
           {/* Video container */}
           <div className="aspect-video bg-black relative">
             {videoError ? (
@@ -158,7 +158,7 @@ export default function ElevatorPitch() {
                     src="/profile4.png" // Use the profile picture as the thumbnail
                     alt="Video Thumbnail"
                     fill // Use fill to cover the container
-                    className="object-cover transition-opacity duration-500"
+                    className="object-contain transition-opacity duration-500"
                   />
                 )}
 
@@ -168,7 +168,8 @@ export default function ElevatorPitch() {
                   className="w-full h-full object-cover"
                   poster="/elevated-pitch-thumbnail.png" // Keep poster for native controls fallback, but custom overlay will cover it
                   onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onClick={handlePlayPause}
                   controls={false} // Hide default controls
                   muted={false} // Start muted to avoid autoplay issues
                   playsInline
