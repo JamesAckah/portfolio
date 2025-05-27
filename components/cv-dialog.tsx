@@ -35,7 +35,7 @@ export default function CVDownloadButton() {
                 Download PDF
               </a>
             </Button>
-          </div>
+            </div>
           </div>
         </DialogContent>
       </Dialog>
