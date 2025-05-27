@@ -121,8 +121,10 @@ export default function Hero() {
                   src="/profile4.png"
                   alt="James Ackah-Blay"
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                   priority
+                  quality={100}
                   onError={() => setImageError(true)}
                 />
               </div>
