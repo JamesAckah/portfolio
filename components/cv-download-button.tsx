@@ -35,10 +35,7 @@ export default function CVDownloadButton() {
           <Download size={16} className="mr-2" />
           Download CV
         </Button>
-        <Button variant="outline" className="flex items-center gap-2" onClick={() => setIsDialogOpen(true)}>
-          <FileText size={16} className="mr-2" />
-          #
-        </Button>
+       
       </div>
       <CVDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </>
