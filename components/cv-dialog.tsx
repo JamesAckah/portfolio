@@ -18,11 +18,11 @@ export default function CVDownloadButton() {
       </DialogTrigger>
       <DialogContent className="max-w-4xl h-[90vh]">
         <DialogHeader>
-          <DialogTitle>James Ackah-Blay - CV</DialogTitle>
+            <DialogTitle>James Ackah-Blay - CV</DialogTitle>
           <DialogDescription>
             View or download my professional CV
           </DialogDescription>
-        </DialogHeader>
+          </DialogHeader>
         <div className="flex flex-col gap-4">
           <iframe 
             src="/James_cv_Remote.pdf#toolbar=0" 
@@ -36,8 +36,8 @@ export default function CVDownloadButton() {
               </a>
             </Button>
           </div>
-        </div>
-      </DialogContent>
-    </Dialog>
+          </div>
+        </DialogContent>
+      </Dialog>
   )
 }
