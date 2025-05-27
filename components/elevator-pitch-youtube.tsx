@@ -226,9 +226,8 @@ export default function ElevatorPitch() {
               </>
             )}
           </div>
-        }
-
-        <VideoTranscript />
+        </div>
+                <VideoTranscript />
 
         <div className="text-center mt-8">
           <p className="text-gray-300 max-w-2xl mx-auto">
