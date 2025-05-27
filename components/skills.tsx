@@ -121,14 +121,14 @@ export default function Skills() {
           </div>
 
           <Tabs defaultValue="categories" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full max-w-xl mx-auto grid-cols-1 sm:grid-cols-3 mb-8 gap-2">
-              <TabsTrigger value="categories" className="px-4 py-2 text-sm sm:text-base">By Category</TabsTrigger>
-              <TabsTrigger value="proficiency" className="px-4 py-2 text-sm sm:text-base">By Proficiency</TabsTrigger>
-              <TabsTrigger value="certs-qualities" className="px-4 py-2 text-sm sm:text-base">Certifications & Qualities</TabsTrigger>
+            <TabsList className="grid w-full max-w-xl mx-auto grid-cols-3 mb-6 gap-3">
+              <TabsTrigger value="categories" className="px-4 py-1.5">By Category</TabsTrigger>
+              <TabsTrigger value="proficiency" className="px-4 py-1.5">By Proficiency</TabsTrigger>
+              <TabsTrigger value="certs-qualities" className="px-4 py-1.5">Certifications & Qualities</TabsTrigger>
             </TabsList>
 
             <TabsContent value="categories" className="mt-0">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {skillCategories.map((skill, index) => (
                   <Card
                     key={index}
@@ -137,7 +137,7 @@ export default function Skills() {
                     <CardHeader className="pb-2">
                       <div className="flex items-center gap-2">
                         <div className="text-primary">{skill.icon}</div>
-                        <CardTitle className="text-base sm:text-lg text-gray-800 dark:text-gray-100">{skill.category}</CardTitle>
+                        <CardTitle className="text-lg text-gray-800 dark:text-gray-100">{skill.category}</CardTitle>
                       </div>
                     </CardHeader>
                     <CardContent>
@@ -152,8 +152,8 @@ export default function Skills() {
 
             <TabsContent value="proficiency" className="mt-0">
               <Card className="border-l-4 border-primary bg-[#FFF8F2] dark:bg-[#2A1A0A]">
-                <CardContent className="p-4 sm:p-6">
-                  <div className="space-y-4 sm:space-y-6">
+                <CardContent className="p-6">
+                  <div className="space-y-6">
                     {skillLevels.map((skill, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex justify-between">
@@ -169,18 +169,18 @@ export default function Skills() {
             </TabsContent>
 
             <TabsContent value="certs-qualities" className="mt-0">
-              <div className="grid grid-cols-1 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-4">
                    <h3 className="text-xl font-bold">Certifications</h3>
-                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                        {certifications.map((cert, index) => (
                            <Card key={index} className="text-center h-full transition-all duration-300 border-l-4 border-primary bg-[#FFF8F2] dark:bg-[#2A1A0A]">
                                <CardHeader className="pb-2 flex flex-col items-center">
                                    <div className="text-primary mb-2">{cert.icon}</div>
-                                   <CardTitle className="text-base sm:text-lg text-gray-800 dark:text-gray-100">{cert.name}</CardTitle>
+                                   <CardTitle className="text-lg text-gray-800 dark:text-gray-100">{cert.name}</CardTitle>
                                </CardHeader>
                                <CardContent>
-                                   <CardDescription className="text-sm text-gray-600 dark:text-gray-300">{cert.issuer}</CardDescription>
+                                   <CardDescription className="text-gray-600 dark:text-gray-300">{cert.issuer}</CardDescription>
                                    <div className="flex items-center justify-center mt-2 text-xs text-primary">
                                        <Calendar className="h-3 w-3 mr-1" />
                                        <span>{cert.date}</span>
@@ -192,13 +192,13 @@ export default function Skills() {
                 </div>
                 <div className="space-y-4">
                    <h3 className="text-xl font-bold">Professional Qualities</h3>
-                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                        {qualities.map((quality, index) => (
                            <Card key={index} className="border-l-4 border-primary bg-[#FFF8F2] dark:bg-[#2A1A0A]">
                                <CardHeader className="pb-2">
                                    <div className="flex items-center gap-2">
                                        <div className="text-primary">{quality.icon}</div>
-                                       <CardTitle className="text-base sm:text-lg text-gray-800 dark:text-gray-100">{quality.title}</CardTitle>
+                                       <CardTitle className="text-lg text-gray-800 dark:text-gray-100">{quality.title}</CardTitle>
                                    </div>
                                </CardHeader>
                                <CardContent>

@@ -10,17 +10,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogDescription,
-  DialogFooter,
 } from "@/components/ui/dialog"
 
 interface HeroProps {
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
-  isMenuOpen?: boolean;
 }
 
-export default function Hero({ open, onOpenChange, isMenuOpen }: HeroProps) {
+export default function Hero({ open, onOpenChange }: HeroProps) {
   const [typedText, setTypedText] = useState("")
   const fullText = "DevOps Engineer & IT Support Specialist"
 
@@ -34,7 +31,7 @@ export default function Hero({ open, onOpenChange, isMenuOpen }: HeroProps) {
   }, [typedText])
 
   return (
-    <section className={`py-20 md:py-28 min-h-[90vh] flex items-center ${isMenuOpen ? 'pt-40' : ''}`}>
+    <section className="py-20 md:py-28 min-h-[90vh] flex items-center">
       <div className="flex flex-col md:flex-row items-center gap-8">
         <div className="w-full md:w-2/3 space-y-6">
           <div className="space-y-2">
@@ -97,43 +94,30 @@ export default function Hero({ open, onOpenChange, isMenuOpen }: HeroProps) {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button asChild className="w-full sm:w-auto">
+            <Button asChild>
               <a href="#contact">
                 Get in Touch
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <Button variant="outline" asChild className="w-full sm:w-auto">
+            <Button variant="outline" asChild>
               <a href="#projects">View Projects</a>
             </Button>
             <Dialog open={open} onOpenChange={onOpenChange}>
               <DialogTrigger asChild>
-                <Button variant="outline" className="w-full sm:w-auto">Download CV</Button>
+                <Button variant="outline">Download CV</Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px]">
+              <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Download CV</DialogTitle>
-                  <DialogDescription>
-                    Choose your preferred format to download my CV
-                  </DialogDescription>
                 </DialogHeader>
-                <div className="flex flex-col gap-4 py-4">
-                  <Button asChild className="w-full">
+                <div className="flex justify-center">
+                  <Button asChild>
                     <a href="/James_cv_Remote.pdf" download>
-                      Download PDF Version
-                    </a>
-                  </Button>
-                  <Button variant="outline" asChild className="w-full">
-                    <a href="/James_cv_Remote.docx" download>
-                      Download Word Version
+                      Download PDF
                     </a>
                   </Button>
                 </div>
-                <DialogFooter>
-                  <Button variant="outline" onClick={() => onOpenChange?.(false)}>
-                    Close
-                  </Button>
-                </DialogFooter>
               </DialogContent>
             </Dialog>
           </div>

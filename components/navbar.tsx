@@ -6,13 +6,9 @@ import { ModeToggle } from "./mode-toggle"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-interface NavbarProps {
-  isMenuOpen: boolean;
-  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export default function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const [isMobile, setIsMobile] = useState(false)
 
@@ -127,8 +123,8 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
 
         {/* Mobile menu */}
         {isMobile && isMenuOpen && (
-          <div className="fixed inset-x-0 top-16 z-50 bg-background/95 backdrop-blur-md py-4 pb-6 border-t animate-in slide-in-from-top">
-            <nav className="flex flex-col space-y-4 px-4">
+          <div className="py-4 pb-6 border-t animate-in slide-in-from-top">
+            <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}

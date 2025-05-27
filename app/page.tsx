@@ -10,18 +10,14 @@ import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scroll-to-top"
 import ElevatorPitchYouTube from "@/components/elevator-pitch-youtube"
 import JourneyTabs from "@/components/journey-tabs";
-import { useState } from 'react';
-import HeroUpdated from "@/components/hero-updated";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <>
-      <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Navbar />
       <main className="bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <HeroUpdated isMenuOpen={isMenuOpen} />
+          <Hero />
           <About />
           <ElevatorPitchYouTube />
           <JourneyTabs />
