@@ -244,7 +244,7 @@ export default function ElevatorPitch() {
         >
           <p className="text-gray-300 max-w-2xl mx-auto">
             Want to learn more about my approach to IT support and DevOps? Let's connect and discuss how I can help your
-            organization.
+            organization grow.
           </p>
           <Button className="mt-4 bg-primary hover:bg-primary/90" asChild>
             <a href="#contact">Contact Me</a>

@@ -1,4 +1,4 @@
-// File: C:\Users\JADIA-PC\Downloads\james-portfolio (1)\app\layout.tsx
+// File: C:\Users\JADIA-PC\Desktop\DevOps_Project_01\portfolio\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
