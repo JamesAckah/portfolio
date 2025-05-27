@@ -1,32 +1,125 @@
 "use client"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import VideoTranscript from "./video-transcript"
 import { Button } from "@/components/ui/button"
-import { ExternalLink } from "lucide-react"
+import { Play, Pause, Volume2, VolumeX } from "lucide-react"
+import { motion } from "framer-motion"
 
-export default function ElevatorPitchYouTube() {
-  const [showIframe, setShowIframe] = useState(false)
-  const [errorLoading, setErrorLoading] = useState(false)
+export default function ElevatorPitch() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isMuted, setIsMuted] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [videoError, setVideoError] = useState(false)
+  const [isVideoReady, setIsVideoReady] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const mountedRef = useRef(true)
 
-  // YouTube video ID
-  const videoId = "Oy6S0iTZx54"
+  // Track component mount status to prevent state updates after unmount
+  useEffect(() => {
+    mountedRef.current = true
+    return () => {
+      mountedRef.current = false
+    }
+  }, [])
 
-  // Function to handle clicking the watch button
-  const handleWatchClick = () => {
+  // Initialize video element once it's mounted
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleCanPlay = () => {
+      if (mountedRef.current) {
+        setVideoLoaded(true)
+        setIsVideoReady(true)
+      }
+    }
+
+    const handleError = () => {
+      if (mountedRef.current) {
+        setVideoError(true)
+        console.error("Video failed to load")
+      }
+    }
+
+    // Add event listeners
+    video.addEventListener("canplaythrough", handleCanPlay)
+    video.addEventListener("error", handleError)
+
+    // Preload the video
+    video.load()
+
+    // Clean up
+    return () => {
+      video.removeEventListener("canplaythrough", handleCanPlay)
+      video.removeEventListener("error", handleError)
+
+      // Ensure video is paused when component unmounts
+      if (video.paused === false) {
+        video.pause()
+      }
+    }
+  }, [])
+
+  const handlePlayPause = async () => {
+    const video = videoRef.current
+    if (!video || !isVideoReady) return
+
     try {
-      setShowIframe(true)
+      if (isPlaying) {
+        video.pause()
+        if (mountedRef.current) {
+          setIsPlaying(false)
+        }
+      } else {
+        // Make sure video is ready before playing
+        if (video.readyState >= 2) {
+          try {
+            // Use Promise to handle play() properly
+            await video.play()
+            if (mountedRef.current) {
+              setIsPlaying(true)
+            }
+          } catch (error) {
+            console.error("Error playing video:", error)
+            if (mountedRef.current) {
+              setIsPlaying(false)
+            }
+          }
+        } else {
+          // If video is not ready, wait for it
+          console.log("Video not ready yet, waiting...")
+          video.addEventListener(
+            "canplaythrough",
+            async () => {
+              if (mountedRef.current && videoRef.current) {
+                try {
+                  await videoRef.current.play()
+                  if (mountedRef.current) {
+                    setIsPlaying(true)
+                  }
+                } catch (error) {
+                  console.error("Error playing video after waiting:", error)
+                }
+              }
+            },
+            { once: true },
+          )
+        }
+      }
     } catch (error) {
-      console.error("Error loading video:", error)
-      setErrorLoading(true)
+      console.error("Error toggling video playback:", error)
     }
   }
 
-  // Function to open YouTube in a new tab
-  const openYouTube = () => {
+  const handleMute = () => {
+    const video = videoRef.current
+    if (!video) return
+
     try {
-      window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank")
+      video.muted = !video.muted
+      setIsMuted(!isMuted)
     } catch (error) {
-      console.error("Error opening YouTube:", error)
+      console.error("Error toggling mute:", error)
     }
   }
 
@@ -52,44 +145,88 @@ export default function ElevatorPitchYouTube() {
         <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
           {/* Video container */}
           <div className="aspect-video bg-black relative">
-            {errorLoading ? (
-              <div className="absolute inset-0 flex items-center justify-center bg-black p-4">
-                <p className="text-white text-center">Unable to load video. Please try the YouTube link below.</p>
-              </div>
-            ) : !showIframe ? (
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/70">
-                <div className="bg-black/50 absolute inset-0"></div>
-                <div className="relative z-10 flex flex-col items-center p-4">
-                  <h3 className="text-white text-xl font-semibold mb-4 text-center">
-                    Elevator Pitch for Job Seekers: How to Answer "Tell Me About Yourself"
-                  </h3>
-                  <div className="flex flex-wrap gap-4 justify-center">
-                    <Button onClick={handleWatchClick} className="bg-primary hover:bg-primary/90">
-                      Watch Video Here
-                    </Button>
-                    <Button
-                      variant="outline"
-                      onClick={openYouTube}
-                      className="border-white/30 text-white hover:bg-white/10"
-                    >
-                      Open on YouTube <ExternalLink className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
+            {videoError ? (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/70">
+                <div className="text-center p-4">
+                  <p className="text-white mb-2">Video could not be loaded</p>
+                  <p className="text-gray-400 text-sm">Please check back later or contact me for more information</p>
                 </div>
               </div>
             ) : (
-              <div className="w-full h-full">
-                <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${videoId}?rel=0`}
-                  title="Elevator Pitch Video"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+              <>
+                {/* Placeholder image while video loads */}
+                <div
+                  className={`absolute inset-0 bg-black flex items-center justify-center transition-opacity duration-500 ${
+                    videoLoaded ? "opacity-0" : "opacity-100"
+                  }`}
+                >
+                  {/* Replace with a static placeholder if needed, or remove if not desired */}
+                  {/* <div className="w-full h-full bg-[url('/video-placeholder.png')] bg-cover bg-center opacity-70"></div> */}
+                </div>
+
+                {/* Video element */}
+                <video
+                  ref={videoRef}
+                  className="w-full h-full object-cover"
+                  poster="/video-placeholder.png" // Optional: use a placeholder image
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  controls={true} // Use default controls
+                  muted={true} // Start muted to avoid autoplay issues
+                  playsInline
+                  preload="metadata" // or "auto" or "none"
+                >
+                  <source src="/elevated pitch.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+                {/* Optional: Custom video controls if needed, removed for now */}
+                {/*
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-center">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-white hover:bg-white/20"
+                    onClick={handlePlayPause}
+                    disabled={!isVideoReady}
+                  >
+                    {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
+                  </Button>
+
+                  <div className="text-white text-sm font-medium">James Ackah-Blay - IT Support & DevOps Engineer</div>
+
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-white hover:bg-white/20"
+                    onClick={handleMute}
+                    disabled={!isVideoReady}
+                  >
+                    {isMuted ? <VolumeX className="h-6 w-6" /> : <Volume2 className="h-6 w-6" />}
+                  </Button>
+                </div>
+                */}
+
+                {/* Optional: Play button overlay if not using default controls */}
+                {/*
+                {!isPlaying && (videoLoaded || isVideoReady) && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-20 w-20 rounded-full bg-primary/80 hover:bg-primary text-white"
+                      onClick={handlePlayPause}
+                      disabled={!isVideoReady}
+                    >
+                      <Play className="h-10 w-10" />
+                    </Button>
+                  </div>
+                )}
+                */}
+              </>
             )}
           </div>
-        </div>
+        }
 
         <VideoTranscript />
 
