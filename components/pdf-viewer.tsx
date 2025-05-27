@@ -11,7 +11,7 @@ export default function PDFViewer() {
   const { toast } = useToast()
 
   const handlePrint = () => {
-    window.open("/cv", "_blank")
+    window.open("../James_cv_Remote.pdf", "_blank")
     toast({
       title: "CV Opened",
       description: "The CV has been opened in a new tab for printing.",
@@ -21,7 +21,7 @@ export default function PDFViewer() {
   const handleDownload = () => {
     try {
       // Use a more reliable approach to download the CV
-      window.open("/cv", "_blank")
+      window.open("../James_cv_Remote.pdf", "_blank")
 
       toast({
         title: "CV Opened",
