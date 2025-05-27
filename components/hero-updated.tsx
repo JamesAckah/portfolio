@@ -10,6 +10,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogDescription,
+  DialogFooter,
 } from "@/components/ui/dialog"
 
 interface HeroProps {
@@ -94,30 +96,43 @@ export default function Hero({ open, onOpenChange }: HeroProps) {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button asChild>
+            <Button asChild className="w-full sm:w-auto">
               <a href="#contact">
                 Get in Touch
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <Button variant="outline" asChild>
+            <Button variant="outline" asChild className="w-full sm:w-auto">
               <a href="#projects">View Projects</a>
             </Button>
             <Dialog open={open} onOpenChange={onOpenChange}>
               <DialogTrigger asChild>
-                <Button variant="outline">Download CV</Button>
+                <Button variant="outline" className="w-full sm:w-auto">Download CV</Button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
                   <DialogTitle>Download CV</DialogTitle>
+                  <DialogDescription>
+                    Choose your preferred format to download my CV
+                  </DialogDescription>
                 </DialogHeader>
-                <div className="flex justify-center">
-                  <Button asChild>
+                <div className="flex flex-col gap-4 py-4">
+                  <Button asChild className="w-full">
                     <a href="/James_cv_Remote.pdf" download>
-                      Download PDF
+                      Download PDF Version
+                    </a>
+                  </Button>
+                  <Button variant="outline" asChild className="w-full">
+                    <a href="/James_cv_Remote.docx" download>
+                      Download Word Version
                     </a>
                   </Button>
                 </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => onOpenChange?.(false)}>
+                    Close
+                  </Button>
+                </DialogFooter>
               </DialogContent>
             </Dialog>
           </div>

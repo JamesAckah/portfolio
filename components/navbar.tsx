@@ -123,8 +123,8 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {isMobile && isMenuOpen && (
-          <div className="py-4 pb-6 border-t animate-in slide-in-from-top">
-            <nav className="flex flex-col space-y-4">
+          <div className="fixed inset-x-0 top-16 z-50 bg-background/95 backdrop-blur-md py-4 pb-6 border-t animate-in slide-in-from-top">
+            <nav className="flex flex-col space-y-4 px-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
