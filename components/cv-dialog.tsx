@@ -7,35 +7,24 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogDescription,
 } from "@/components/ui/dialog"
 
 export default function CVDownloadButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">View CV</Button>
+        <Button variant="outline">Download CV</Button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl h-[90vh]">
+      <DialogContent>
         <DialogHeader>
-            <DialogTitle>James Ackah-Blay - CV</DialogTitle>
-          <DialogDescription>
-            View or download my professional CV
-          </DialogDescription>
+          <DialogTitle>Download CV</DialogTitle>
           </DialogHeader>
-        <div className="flex flex-col gap-4">
-          <iframe 
-            src="/James_cv_Remote.pdf#toolbar=0" 
-            className="w-full h-[70vh] border-0"
-            title="CV Preview"
-          />
-          <div className="flex justify-center">
-            <Button asChild>
-              <a href="/James_cv_Remote.pdf" download>
-                Download PDF
-              </a>
-            </Button>
-          </div>
+        <div className="flex justify-center">
+          <Button asChild>
+            <a href="/James_cv_Remote.pdf" download>
+              Download PDF
+            </a>
+          </Button>
           </div>
         </DialogContent>
       </Dialog>
