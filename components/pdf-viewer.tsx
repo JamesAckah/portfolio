@@ -227,7 +227,10 @@ export default function PDFViewer() {
                   <h3 className="text-lg font-bold text-gray-800 border-b pb-1 mb-3">TOOLS & TECHNOLOGIES</h3>
                   <p className="text-gray-700">Git | Jenkins | Maven | Terraform | AWS | SonarQube</p>
                 </div>
-
+                <div><p className ="mt-6 text-gray-700 font-semibold">
+                  REFERENCES ARE KINDLY AVAILABLE ON REQUEST
+                  </p>
+                  </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-800 border-b pb-1 mb-3">LANGUAGES</h3>
                   <p className="text-gray-700">English (Fluent)</p>
@@ -236,10 +239,9 @@ export default function PDFViewer() {
                   <p className="text-gray-700">
                     Cloud Infrastructure | DevOps Automation | Continuous Learning | Problem-Solving
                   </p>
+                
                 </div>
-                <div className="mt-6 text-gray-700 font-semibold">
-                REFERENCES ARE KINDLY AVAILABLE ON REQUEST
-              </div>
+             
               </div>
              
             </div>
