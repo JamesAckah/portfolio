@@ -1,10 +1,9 @@
 "use client"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail, Linkedin, MapPin, Github } from "lucide-react"
+import { ArrowRight, Mail, Linkedin, MapPin, Github, Download } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import CVDownloadButton from "./cv-download-button"
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("")
@@ -109,7 +108,12 @@ export default function Hero() {
                 <Github className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <CVDownloadButton />
+            <Button variant="outline" asChild>
+              <a href="/James_cv_Remote.pdf" download>
+                Download CV
+                <Download className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
           </div>
         </div>
 
