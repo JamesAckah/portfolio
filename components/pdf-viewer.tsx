@@ -201,9 +201,6 @@ export default function PDFViewer() {
                     <li>Operating Systems: Linux, Windows, Mac OS</li>
                     <li>Networking: LAN/WAN, VPN, DNS, DHCP</li>
                   </ul>
-                  <div className="mt-6 text-gray-700 font-semibold">
-                    REFERENCES ARE KINDLY AVAILABLE ON REQUEST
-                  </div>
                 </div>
 
                 <div>
@@ -240,6 +237,9 @@ export default function PDFViewer() {
                     Cloud Infrastructure | DevOps Automation | Continuous Learning | Problem-Solving
                   </p>
                 </div>
+              </div>
+              <div className="mt-6 text-gray-700 font-semibold">
+                REFERENCES ARE KINDLY AVAILABLE ON REQUEST
               </div>
             </div>
           </div>
