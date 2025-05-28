@@ -11,10 +11,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import PDFViewer from "./pdf-viewer"
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("")
-  const [isOpen, setIsOpen] = useState(false)
   const fullText = "System Administrator | DevOps Engineer | IT Support"
   const [imageError, setImageError] = useState(false)
 
@@ -116,23 +116,13 @@ export default function Hero() {
                 <Github className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <Dialog open={isOpen} onOpenChange={setIsOpen}>
-              <DialogTrigger asChild>
-                <Button variant="outline">View CV</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Download CV</DialogTitle>
-                </DialogHeader>
-                <div className="flex justify-center">
-                  <Button asChild>
-                    <a href="/James_cv_Remote.pdf" download>
-                      Download PDF
-                    </a>
-                  </Button>
-                </div>
-              </DialogContent>
-            </Dialog>
+            <Button variant="outline" asChild>
+              <a href="/James_cv_Remote.pdf" download>
+                Download CV
+                <Download className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <PDFViewer />
           </div>
         </div>
 
