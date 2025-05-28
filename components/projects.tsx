@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, ChevronRight, Github } from "lucide-react"
+import { ExternalLink, ChevronRight, Github, X } from "lucide-react"
 import {
   Dialog,
   DialogContent,
@@ -11,6 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog"
 
 export default function Projects() {
@@ -124,15 +125,21 @@ export default function Projects() {
                       <ChevronRight className="h-4 w-4 ml-1" />
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="sm:max-w-[600px]">
+                  <DialogContent className="sm:max-w-[600px] h-[90vh]">
                     {selectedProject !== null && (
                       <>
-                        <DialogHeader>
+                        <DialogHeader className="px-6 py-4">
                           <DialogTitle>{projects[selectedProject].title}</DialogTitle>
                           <DialogDescription>{projects[selectedProject].role}</DialogDescription>
+                          <DialogClose asChild>
+                            <Button variant="ghost" size="sm" className="absolute right-4 top-4 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+                              <X className="h-4 w-4" />
+                              <span className="sr-only">Close</span>
+                            </Button>
+                          </DialogClose>
                         </DialogHeader>
 
-                        <div className="space-y-4 mt-4 px-6 py-4">
+                        <div className="space-y-4 mt-4 px-6 py-4 overflow-y-auto">
                           <div>
                             <h4 className="text-sm font-semibold">Project Objective</h4>
                             <p className="text-sm mt-1">{projects[selectedProject].description}</p>
