@@ -237,10 +237,11 @@ export default function PDFViewer() {
                     Cloud Infrastructure | DevOps Automation | Continuous Learning | Problem-Solving
                   </p>
                 </div>
-              </div>
-              <div className="mt-6 text-gray-700 font-semibold">
+                <div className="mt-6 text-gray-700 font-semibold">
                 REFERENCES ARE KINDLY AVAILABLE ON REQUEST
               </div>
+              </div>
+             
             </div>
           </div>
         </DialogContent>
