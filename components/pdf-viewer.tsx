@@ -79,34 +79,16 @@ export default function PDFViewer() {
                   />
                 </div>
                 <div className="flex-grow">
-                  <h1 className="text-3xl font-bold text-gray-800">James Ackah-Blay</h1>
+                  <h1 className="text-3xl font-bold text-gray-800">JAMES ACKAH-BLAY</h1>
                   <h2 className="text-xl text-gray-600 mt-1">System Administrator | DevOps Engineer | IT Support</h2>
-                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-600">
-                    <div>+233 542947685</div>
+                  <div className="mt-3 text-sm text-gray-600 space-y-1">
+                    <div>Address: P. O. Box 20, Axim - Ghana</div>
+                    <div>Mobile: +233542947685 || Email: jamesblay80@gmail.com</div>
                     <div>
-                      <a href="mailto:jamesblay80@gmail.com" className="text-blue-600 hover:underline">
-                        jamesblay80@gmail.com
-                      </a>
+                      LinkedIn: <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.linkedin.com/in/</a>
                     </div>
                     <div>
-                      <a
-                        href="https://linkedin.com/in/jamesackahblay"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:underline"
-                      >
-                        linkedin.com/in/jamesackahblay
-                      </a>
-                    </div>
-                    <div>
-                      <a
-                        href="https://devopsbyjames.dalijaytechhub.online/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:underline"
-                      >
-                        devopsbyjames.dalijaytechhub.online
-                      </a>
+                      Github: <a href="https://github.com/JamesAckah" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://github.com/JamesAckah</a>
                     </div>
                   </div>
                 </div>
@@ -132,60 +114,54 @@ export default function PDFViewer() {
 
                 <div className="mb-4">
                   <div className="flex justify-between items-start">
-                    <h4 className="font-bold text-gray-800">ExLearn Technologies – DevOps Intern (Remote)</h4>
-                    <span className="text-gray-600 text-sm">October – December 2024</span>
+                    <h4 className="font-bold text-gray-800">Kolonos BV</h4>
+                    <span className="text-gray-600 text-sm">Jan 2022 – Present</span>
                   </div>
+                  <p className="font-semibold text-gray-700">System Administrator</p>
                   <ul className="list-disc pl-5 mt-2 text-gray-700">
-                    <li>
-                      Designed and implemented CI/CD pipelines to automate build, test, and deployment processes,
-                      ensuring rapid and consistent application delivery.
-                    </li>
-                    <li>
-                      Optimized Linux-based servers, improving system performance through effective process management.
-                    </li>
-                    <li>
-                      Implemented load balancers and network optimizations to improve application scalability and
-                      reliability.
-                    </li>
-                    <li>
-                      Gained hands-on experience with Terraform for Infrastructure as Code (IaC) and AWS resource
-                      management.
-                    </li>
+                    <li>Reduced system downtime by 65% through preventive maintenance.</li>
+                    <li>Implemented backup solution that recovered critical data after a power surge incident.</li>
+                    <li>Trained 12 teachers on basic IT troubleshooting, reducing support tickets by 30%</li>
+                    <li>Set up a computer lab with 25 workstations within limited budget constraints</li>
                   </ul>
                 </div>
 
                 <div className="mb-4">
                   <div className="flex justify-between items-start">
-                    <h4 className="font-bold text-gray-800">
-                      Charlotte Dolphyne Technical Institute – Instructor (Industrial Attachment)
-                    </h4>
-                    <span className="text-gray-600 text-sm">April – September 2023</span>
+                    <h4 className="font-bold text-gray-800">Exlearn Technologies, Remote</h4>
+                    <span className="text-gray-600 text-sm">Oct 2024 – Dec 2024</span>
                   </div>
+                  <p className="font-semibold text-gray-700">DevOps Intern</p>
                   <ul className="list-disc pl-5 mt-2 text-gray-700">
-                    <li>
-                      Taught Web Design and C++ programming, simplifying technical concepts for students aged 16–20.
-                    </li>
-                    <li>Designed hands-on lesson plans, promoting deep learning and student engagement.</li>
-                    <li>Configured classroom network environments and provided IT support for smooth operations.</li>
-                    <li>Provided constructive feedback on assignments and projects within strict timelines.</li>
+                    <li>Reduced deployment time by 75% through automation</li>
+                    <li>Created infrastructure as code templates now used across the organisation</li>
+                    <li>Implemented monitoring that identified and prevented 3 major outages</li>
+                    <li>Documented the entire DevOps process for future team members</li>
                   </ul>
                 </div>
 
                 <div className="mb-4">
                   <div className="flex justify-between items-start">
-                    <h4 className="font-bold text-gray-800">Kolonos BV – System Administrator</h4>
-                    <span className="text-gray-600 text-sm">2022 – Present</span>
+                    <h4 className="font-bold text-gray-800">Charlotte Dolphyne Technical Institute, Takoradi</h4>
+                    <span className="text-gray-600 text-sm">Apr 2023 – Sept 2023</span>
                   </div>
+                  <p className="font-semibold text-gray-700">Instructor</p>
                   <ul className="list-disc pl-5 mt-2 text-gray-700">
                     <li>
-                      Configured and optimized network systems, improving connectivity and reducing latency by 15%.
-                    </li>
-                    <li>Managed data backup and recovery systems, ensuring high availability and data integrity.</li>
-                    <li>
-                      Installed, configured, and maintained hardware and software systems for seamless operations.
+                      Taught Web Design and C++ Programming to over 80 students aged 16–20, achieving a 92% course
+                      completion rate.
                     </li>
                     <li>
-                      Provided technical support while monitoring system performance to maintain uptime and efficiency.
+                      Developed and delivered 20+ hands-on lessons, increasing student engagement and practical
+                      understanding by 35%, based on feedback and performance assessments.
+                    </li>
+                    <li>
+                      Configured and maintained 30+ classroom computers and network devices, reducing technical
+                      disruptions by over 40% during class hours.
+                    </li>
+                    <li>
+                      Evaluated 80+ assignments and 15 final projects, providing detailed feedback that helped 75% of
+                      students improve their scores by at least one grade level.
                     </li>
                   </ul>
                 </div>
@@ -225,6 +201,9 @@ export default function PDFViewer() {
                     <li>Operating Systems: Linux, Windows, Mac OS</li>
                     <li>Networking: LAN/WAN, VPN, DNS, DHCP</li>
                   </ul>
+                  <div className="mt-6 text-gray-700 font-semibold">
+                    REFERENCES ARE KINDLY AVAILABLE ON REQUEST
+                  </div>
                 </div>
 
                 <div>
