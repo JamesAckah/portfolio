@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@
 import { Download, FileText, Printer, X } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
+import styles from "./cv-print.module.css"
 
 export default function PDFViewer() {
   const [open, setOpen] = useState(false)
@@ -66,7 +67,7 @@ export default function PDFViewer() {
             </div>
           </DialogHeader>
 
-          <div className="overflow-y-auto h-full p-6">
+          <div id="cv-content" className="overflow-y-auto h-full p-6">
             <div className="bg-white text-black p-8 max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row items-start gap-6 border-b pb-6">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200 flex-shrink-0">

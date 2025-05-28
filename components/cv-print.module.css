@@ -1,0 +1,25 @@
+@media print {
+  body > div:not(#cv-content) {
+    display: none;
+  }
+  #cv-content {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+   .max-w-4xl.mx-auto {
+     max-width: none !important;
+     margin: 0 !important;
+   }
+  /* Hide modal header during print */
+  .sticky.top-0.bg-background.z-10.border-b {
+      display: none !important;
+  }
+  /* Ensure main content is visible and takes full width */
+ .overflow-y-auto.h-full.p-6 {
+     overflow: visible !important;
+     height: auto !important;
+     padding: 0 !important;
+ }
+} 
