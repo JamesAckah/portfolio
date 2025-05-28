@@ -132,7 +132,7 @@ export default function Projects() {
                           <DialogDescription>{projects[selectedProject].role}</DialogDescription>
                         </DialogHeader>
 
-                        <div className="space-y-4 mt-4">
+                        <div className="space-y-4 mt-4 px-6 py-4">
                           <div>
                             <h4 className="text-sm font-semibold">Project Objective</h4>
                             <p className="text-sm mt-1">{projects[selectedProject].description}</p>
