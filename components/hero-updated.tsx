@@ -1,20 +1,13 @@
 "use client"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail, Linkedin, MapPin, Github, Download } from "lucide-react"
+import { ArrowRight, Mail, Linkedin, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import CVDownloadButton from "./cv-download-button"
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("")
-  const [isOpen, setIsOpen] = useState(false)
   const fullText = "DevOps Engineer & IT Support Specialist"
 
   useEffect(() => {
@@ -69,10 +62,6 @@ export default function Hero() {
               </a>
             </div>
             <div className="flex items-center gap-1">
-              <Mail size={16} />
-              <span>+233 542947685</span>
-            </div>
-            <div className="flex items-center gap-1">
               <Linkedin size={16} />
               <a
                 href="https://linkedin.com/in/james-ackah-blay"
@@ -99,39 +88,13 @@ export default function Hero() {
             <Button variant="outline" asChild>
               <a href="#projects">View Projects</a>
             </Button>
-            <Button variant="outline" asChild>
-              <a href="https://github.com/JamesAckah" target="_blank" rel="noopener noreferrer">
-                GitHub <Github size={16} className="ml-2" />
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="/James_cv_Remote.pdf" download>
-                Download CV <Download size={16} className="ml-2" />
-              </a>
-            </Button>
-            <Dialog open={isOpen} onOpenChange={setIsOpen}>
-              <DialogTrigger asChild>
-                <Button variant="outline">View CV</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Download CV</DialogTitle>
-                </DialogHeader>
-                <div className="flex justify-center">
-                  <Button asChild>
-                    <a href="/James_cv_Remote.pdf" download>
-                      Download PDF
-                    </a>
-                  </Button>
-                </div>
-              </DialogContent>
-            </Dialog>
+            <CVDownloadButton />
           </div>
         </div>
 
         <div className="w-full md:w-1/3 flex justify-center">
           <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/20">
-            <Image src="/profile4.png" alt="James Ackah-Blay" fill className="object-cover" priority />
+            <Image src="/james-profile.png" alt="James Ackah-Blay" fill className="object-cover" priority />
           </div>
         </div>
       </div>

@@ -89,10 +89,6 @@ export default function HeroWithBlend() {
                 </a>
               </div>
               <div className="flex items-center gap-1">
-                <Mail size={16} className="text-primary" />
-                <span>+233 542947685</span>
-              </div>
-              <div className="flex items-center gap-1">
                 <Linkedin size={16} className="text-primary" />
                 <a
                   href="https://linkedin.com/in/james-ackah-blay"
@@ -101,17 +97,6 @@ export default function HeroWithBlend() {
                   className="hover:text-primary transition-colors"
                 >
                   LinkedIn
-                </a>
-              </div>
-              <div className="flex items-center gap-1">
-                <i className="bi bi-medium"></i>
-                <a
-                  href="https://medium.com/@jamesblay80"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
-                  Medium
                 </a>
               </div>
               <div className="flex items-center gap-1">
@@ -146,7 +131,7 @@ export default function HeroWithBlend() {
             className="w-full md:w-1/3 flex justify-center"
           >
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/30 ring-4 ring-primary/10">
-              <Image src="/profile4.png" alt="James Ackah-Blay" fill className="object-cover" priority />
+              <Image src="/james-profile.png" alt="James Ackah-Blay" fill className="object-cover" priority />
             </div>
           </motion.div>
         </div>
