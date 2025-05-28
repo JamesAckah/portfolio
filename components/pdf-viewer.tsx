@@ -82,9 +82,11 @@ export default function PDFViewer() {
                 <Printer className="h-4 w-4 mr-2" />
                 Print
               </Button>
-              <Button variant="outline" size="sm" onClick={handleDownload}>
-                <Download className="h-4 w-4 mr-2" />
-                Save/Print as PDF
+              <Button variant="outline" size="sm" asChild>
+                <a href="/James_cv_Remote.pdf" download>
+                  <Download className="h-4 w-4 mr-2" />
+                  Download
+                </a>
               </Button>
               <DialogClose asChild>
                 <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={() => setOpen(false)}>
