@@ -21,8 +21,13 @@ export default function PDFViewer() {
 
   const handleDownload = () => {
     try {
-      // Use a more reliable approach to download the CV
-      window.print()
+      // Direct download of the PDF file
+      const link = document.createElement('a');
+      link.href = '/James_cv_Remote.pdf';
+      link.download = 'James_cv_Remote.pdf'; // Suggests a filename
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
       toast({
         title: "CV Opened",
@@ -56,7 +61,7 @@ export default function PDFViewer() {
               </Button>
               <Button variant="outline" size="sm" onClick={handleDownload}>
                 <Download className="h-4 w-4 mr-2" />
-                Save/Print as PDF
+                Download PDF
               </Button>
               <DialogClose asChild>
                 <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={() => setOpen(false)}>
