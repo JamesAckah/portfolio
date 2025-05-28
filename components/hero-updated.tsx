@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail, Linkedin, MapPin } from "lucide-react"
+import { ArrowRight, Mail, Linkedin, MapPin, Github, Download } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import {
@@ -98,6 +98,16 @@ export default function Hero() {
             </Button>
             <Button variant="outline" asChild>
               <a href="#projects">View Projects</a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="https://github.com/JamesAckah" target="_blank" rel="noopener noreferrer">
+                GitHub <Github size={16} className="ml-2" />
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="/James_cv_Remote.pdf" download>
+                Download CV <Download size={16} className="ml-2" />
+              </a>
             </Button>
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
               <DialogTrigger asChild>
