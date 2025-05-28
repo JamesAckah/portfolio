@@ -5,14 +5,28 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@
 import { Download, FileText, Printer, X } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
-import styles from "./cv-print.module.css"
 
 export default function PDFViewer() {
   const [open, setOpen] = useState(false)
   const { toast } = useToast()
 
   const handlePrint = () => {
-    window.print()
+    const printContent = document.getElementById('cv-content');
+    if (printContent) {
+      const originalContents = document.body.innerHTML;
+      const printContents = printContent.innerHTML;
+
+      document.body.innerHTML = printContents;
+
+      window.print();
+
+      document.body.innerHTML = originalContents; // Restore original content
+      // A slight delay might be needed to restore content after print dialog is closed
+      setTimeout(() => { location.reload(); }, 100);
+    } else {
+      // Fallback to printing the whole window or show an error
+      window.print();
+    }
     toast({
       title: "CV Opened",
       description: "The CV has been opened in a new tab for printing.",
@@ -21,13 +35,22 @@ export default function PDFViewer() {
 
   const handleDownload = () => {
     try {
-      // Direct download of the PDF file
-      const link = document.createElement('a');
-      link.href = '/James_cv_Remote.pdf';
-      link.download = 'James_cv_Remote.pdf'; // Suggests a filename
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Use a more reliable approach to download the CV
+      const printContent = document.getElementById('cv-content');
+      if (printContent) {
+        const originalContents = document.body.innerHTML;
+        const printContents = printContent.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+        setTimeout(() => { location.reload(); }, 100);
+      } else {
+        // Fallback or error
+        window.print();
+      }
 
       toast({
         title: "CV Opened",
@@ -61,7 +84,7 @@ export default function PDFViewer() {
               </Button>
               <Button variant="outline" size="sm" onClick={handleDownload}>
                 <Download className="h-4 w-4 mr-2" />
-                Download PDF
+                Save/Print as PDF
               </Button>
               <DialogClose asChild>
                 <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={() => setOpen(false)}>
@@ -72,8 +95,8 @@ export default function PDFViewer() {
             </div>
           </DialogHeader>
 
-          <div id="cv-content" className="overflow-y-auto h-full p-6">
-            <div className="bg-white text-black p-8 max-w-4xl mx-auto">
+          <div className="overflow-y-auto h-full p-6">
+            <div id="cv-content" className="bg-white text-black p-8 max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row items-start gap-6 border-b pb-6">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-200 flex-shrink-0">
                   <Image
