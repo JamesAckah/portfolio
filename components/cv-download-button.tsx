@@ -7,7 +7,6 @@ import CVDialog from "./cv-dialog"
 
 export default function CVDownloadButton() {
   const { toast } = useToast()
-  const [isDialogOpen, setIsDialogOpen] = useState(false)
 
   const handleDownload = () => {
     try {
@@ -29,15 +28,8 @@ export default function CVDownloadButton() {
   }
 
   return (
-    <>
-      <div className="flex gap-2">
-        <Button variant="ghost" className="flex items-center gap-2" onClick={handleDownload}>
-          <Download size={16} className="mr-2" />
-          Download CV
-        </Button>
-       
-      </div>
-      <CVDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
-    </>
+    // This component no longer renders a button or dialog directly, as the hero section handles it.
+    // Its functionality (opening the PDF in a new tab) can potentially be integrated elsewhere if needed, or this component can be removed if unused.
+    null
   )
 }
