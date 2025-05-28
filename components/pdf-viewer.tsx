@@ -11,7 +11,7 @@ export default function PDFViewer() {
   const { toast } = useToast()
 
   const handlePrint = () => {
-    window.open("/James_cv_Remote.pdf", "_blank")
+    window.print()
     toast({
       title: "CV Opened",
       description: "The CV has been opened in a new tab for printing.",
@@ -21,7 +21,7 @@ export default function PDFViewer() {
   const handleDownload = () => {
     try {
       // Use a more reliable approach to download the CV
-      window.open("/James_cv_Remote.pdf", "_blank")
+      window.print()
 
       toast({
         title: "CV Opened",
@@ -55,7 +55,7 @@ export default function PDFViewer() {
               </Button>
               <Button variant="outline" size="sm" onClick={handleDownload}>
                 <Download className="h-4 w-4 mr-2" />
-                Download
+                Save/Print as PDF
               </Button>
               <DialogClose asChild>
                 <Button variant="ghost" size="sm" className="h-8 w-8 p-0" onClick={() => setOpen(false)}>
