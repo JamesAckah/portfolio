@@ -12,13 +12,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
-interface HeroProps {
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-}
-
-export default function Hero({ open, onOpenChange }: HeroProps) {
+export default function Hero() {
   const [typedText, setTypedText] = useState("")
+  const [isOpen, setIsOpen] = useState(false)
   const fullText = "DevOps Engineer & IT Support Specialist"
 
   useEffect(() => {
@@ -103,9 +99,9 @@ export default function Hero({ open, onOpenChange }: HeroProps) {
             <Button variant="outline" asChild>
               <a href="#projects">View Projects</a>
             </Button>
-            <Dialog open={open} onOpenChange={onOpenChange}>
+            <Dialog open={isOpen} onOpenChange={setIsOpen}>
               <DialogTrigger asChild>
-                <Button variant="outline">Download CV</Button>
+                <Button variant="outline">View CV</Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
