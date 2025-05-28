@@ -26,7 +26,7 @@ export default function Skills() {
     },
     {
       category: "Monitoring & Logging",
-      skills: "CloudWatch, UptimeRobot",
+      skills: "CloudWatch",
       icon: <LineChart className="h-6 w-6" />,
     },
     {
@@ -121,7 +121,7 @@ export default function Skills() {
           </div>
 
           <Tabs defaultValue="categories" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="flex w-full max-w-xl mx-auto justify-center mb-6 gap-3 flex-wrap">
+            <TabsList className="flex w-full max-w-xl mx-auto justify-center mb-12 gap-3 flex-wrap">
               <TabsTrigger value="categories" className="px-4 py-1.5">By Category</TabsTrigger>
               <TabsTrigger value="proficiency" className="px-4 py-1.5">By Proficiency</TabsTrigger>
               <TabsTrigger value="certs-qualities" className="px-4 py-1.5">Certifications & Qualities</TabsTrigger>
