@@ -121,7 +121,7 @@ export default function Skills() {
           </div>
 
           <Tabs defaultValue="categories" value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full max-w-xl mx-auto grid-cols-1 sm:grid-cols-3 mb-6 gap-3">
+            <TabsList className="flex w-full max-w-xl mx-auto justify-center mb-6 gap-3 flex-wrap">
               <TabsTrigger value="categories" className="px-4 py-1.5">By Category</TabsTrigger>
               <TabsTrigger value="proficiency" className="px-4 py-1.5">By Proficiency</TabsTrigger>
               <TabsTrigger value="certs-qualities" className="px-4 py-1.5">Certifications & Qualities</TabsTrigger>
