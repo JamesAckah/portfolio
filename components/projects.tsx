@@ -73,22 +73,30 @@ export default function Projects() {
       solution: "Implemented caching, CDN integration, and an optimized EC2 instance with auto-scaling capabilities.",
     },
     {
-      title: "Technical Article Writing & Personal Site Hosting",
-      role: "Technical Writer & Publisher",
+      title: "High Availability Disaster Recovery on AWS",
+      role: "DevOps Engineer",
       description:
-        "Wrote and published DevOps and cloud computing articles on a personal portfolio website hosted on S3. Demonstrated ability to explain technical topics clearly.",
-      tech: ["HTML", "CSS", "AWS S3", "Markdown"],
-      liveLink: "https://devopsbyjames.dalijaytechhub.online",
-      githubLink: "#",
+        "Designed and implemented a high availability and disaster recovery solution on AWS, ensuring business continuity and meeting strict uptime and recovery objectives.",
+      tech: ["AWS", "Serverless", "S3", "Route 53", "Lambda", "CloudFront"],
+      liveLink: null,
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
       achievements: [
-        "Published 15+ articles on DevOps best practices",
-        "Grew readership to 500+ monthly visitors",
-        "Articles have been referenced in online DevOps communities",
-        "Implemented serverless hosting that reduced hosting costs by 60%",
+        "Met 99.99% uptime target for a critical e-commerce platform",
+        "Achieved 15 minutes Recovery Time Objective (RTO)",
+        "Achieved 5 minutes Recovery Point Objective (RPO)",
       ],
-      challenge: "Creating engaging technical content while maintaining a cost-effective personal site.",
+      challenge:
+        "Meeting stringent uptime and recovery objectives for a critical e-commerce platform with zero downtime tolerance.",
       solution:
-        "Leveraged AWS S3 static hosting with CloudFront for an almost zero-maintenance, highly available site.",
+        "Implemented a multi-region architecture leveraging AWS serverless services (S3, Route 53, Lambda, CloudFront), automated backups, and defined failover procedures.",
+      caseStudy: {
+        title: "Case Study: Acme Corporation's High Availability Needs",
+        requirements: [
+          "Uptime Target: 99.99%",
+          "Recovery Time Objective (RTO): 15 minutes",
+          "Recovery Point Objective (RPO): 5 minutes",
+        ],
+      },
     },
   ]
 
