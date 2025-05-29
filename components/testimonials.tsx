@@ -12,25 +12,25 @@ export default function Testimonials() {
       quote:
         "James quickly resolved our network issues and implemented a backup solution that saved our critical data when we experienced hardware failure. His proactive approach to IT support is exactly what we needed.",
       author: "Sarah Mensah",
-      role: "Principal, Accra Junior High School",
+      role: "Principal, Charlotte Dolphyne Technical Institute",
     },
     {
       quote:
         "During his internship, James showed remarkable initiative in learning new technologies and implementing them in our projects. His CI/CD pipeline improvements reduced our deployment times dramatically.",
       author: "David Osei",
-      role: "CTO, ExLearn Technologies",
+      role: "CEO, ExLearn Technologies",
     },
     {
       quote:
         "Working with James on our web infrastructure was a great experience. He not only deployed our website efficiently but also taught us how to maintain it and improved its performance significantly.",
-      author: "Grace Addo",
+      author: "Lawson Dalikey-Dotsey",
       role: "Founder, Dalijay Tech Hub",
     },
     {
       quote:
-        "James's technical articles have been an invaluable resource for our junior IT staff. He explains complex DevOps concepts in a way that's easy to understand and implement.",
-      author: "Michael Nkrumah",
-      role: "IT Manager, GhanaWeb Solutions",
+        "James demonstrated exceptional growth and practical application of AWS skills during his training at Amaltech Ghana. His dedication to learning, especially highlighted in our ongoing project, is truly commendable. He quickly grasped complex concepts and is applying them effectively.",
+      author: "Isaac Tandoh",
+      role: "AWS Trainer, Amaltech Ghana",
     },
   ]
 

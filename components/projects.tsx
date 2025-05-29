@@ -19,6 +19,39 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "AWS Secure, Highly Available Infrastructure Design",
+      role: "DevOps Engineer",
+      description:
+        "Designed and implemented a secure, highly available, and monitored infrastructure on AWS, focusing on key services like ECS, ALB, RDS, and utilizing Infrastructure as Code with Terraform.",
+      tech: [
+        "AWS ECS Fargate",
+        "ALB",
+        "RDS Multi-AZ",
+        "Auto Scaling",
+        "IAM",
+        "VPC",
+        "Security Groups",
+        "S3",
+        "CloudWatch",
+        "CloudTrail",
+        "Terraform",
+        "GitHub Actions",
+        "OpenSearch/ELK Stack",
+      ],
+      liveLink: null,
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      achievements: [
+        "Designed and deployed a highly available web application infrastructure on ECS Fargate across multiple Availability Zones.",
+        "Implemented robust security measures following AWS best practices, including IAM roles, VPC design, and data encryption.",
+        "Established comprehensive logging and monitoring using CloudWatch, CloudTrail, and a centralized logging solution.",
+        "Automated infrastructure provisioning and management using Terraform with an S3 backend for state locking.",
+      ],
+      challenge:
+        "Integrating multiple AWS services and third-party tools (Terraform, GitHub Actions, OpenSearch/ELK) to create a cohesive, secure, highly available, and monitored infrastructure.",
+      solution:
+        "Developed detailed architecture diagrams, step-by-step deployment guides, and comprehensive Infrastructure as Code using Terraform to ensure a robust and automated solution.",
+    },
+    {
       title: "Serverless Contact Form with Terraform and GitHub Actions",
       role: "DevOps Engineer",
       description:
