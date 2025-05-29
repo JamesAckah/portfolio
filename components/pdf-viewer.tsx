@@ -84,8 +84,8 @@ export default function PDFViewer() {
               </Button>
               <Button variant="outline" size="sm" asChild>
                 <a href="/James_cv_Remote.pdf" download>
-                  <Download className="h-4 w-4 mr-2" />
-                  Download
+                <Download className="h-4 w-4 mr-2" />
+                Download
                 </a>
               </Button>
               <DialogClose asChild>
@@ -261,7 +261,7 @@ export default function PDFViewer() {
                   <br />
                   <h3>REFERENCES ARE KINDLY AVAILABLE ON REQUEST</h3>
                 </div>
-                
+
                 <div>
                   <h3 className="text-lg font-bold text-gray-800 border-b pb-1 mb-3">LANGUAGES</h3>
                   <p className="text-gray-700">English (Fluent)</p>
