@@ -11,13 +11,13 @@ export default function Testimonials() {
     {
       quote:
         "James quickly resolved our network issues and implemented a backup solution that saved our critical data when we experienced hardware failure. His proactive approach to IT support is exactly what we needed.",
-      author: "Sarah Mensah",
-      role: "Principal, Charlotte Dolphyne Technical Institute",
+      author: "Nathaniel Aborabora",
+      role: "Vice Principal, Charlotte Dolphyne Technical Institute",
     },
     {
       quote:
         "During his internship, James showed remarkable initiative in learning new technologies and implementing them in our projects. His CI/CD pipeline improvements reduced our deployment times dramatically.",
-      author: "David Osei",
+      author: "PS",
       role: "CEO, ExLearn Technologies",
     },
     {
