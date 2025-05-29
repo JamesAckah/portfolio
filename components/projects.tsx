@@ -19,6 +19,44 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Deploying a WordPress Application Using AWS CodeDeploy",
+      role: "DevOps Engineer",
+      description:
+        "Implemented a fully automated deployment pipeline for a WordPress application using AWS CodeDeploy, ensuring zero-downtime deployments and automated rollbacks.",
+      tech: ["AWS CodeDeploy", "EC2", "S3", "IAM", "CloudShell", "WordPress"],
+      liveLink: "http://ec2-34-239-115-14.compute-1.amazonaws.com/WordPress",
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      achievements: [
+        "Implemented automated deployment pipeline reducing deployment time by 80%",
+        "Achieved zero-downtime deployments using CodeDeploy's deployment strategies",
+        "Set up automated rollback mechanisms for failed deployments",
+        "Implemented security best practices with IAM roles and security groups",
+      ],
+      challenge:
+        "Setting up a robust deployment pipeline that ensures zero-downtime deployments while maintaining security and scalability.",
+      solution:
+        "Implemented AWS CodeDeploy with custom deployment scripts, automated testing, and rollback mechanisms, while following AWS best practices for security and scalability.",
+    },
+    {
+      title: "Deploying Java Web Applications on Tomcat using Maven and AWS Infrastructure",
+      role: "DevOps Engineer",
+      description:
+        "Designed and implemented a comprehensive deployment solution for Java web applications using Maven, Tomcat, and AWS infrastructure, ensuring high availability and scalability.",
+      tech: ["AWS", "EC2", "Maven", "Tomcat", "Java", "VPC", "Security Groups"],
+      liveLink: "http://ec2-34-239-115-14.compute-1.amazonaws.com:8080",
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      achievements: [
+        "Set up automated build and deployment pipeline using Maven",
+        "Configured high-availability Tomcat server on AWS EC2",
+        "Implemented secure VPC architecture with proper security groups",
+        "Automated deployment process reducing manual intervention by 90%",
+      ],
+      challenge:
+        "Creating a secure and scalable infrastructure for Java web applications while ensuring automated deployments and high availability.",
+      solution:
+        "Implemented a custom VPC architecture with proper security groups, automated Maven builds, and Tomcat server configuration with deployment automation scripts.",
+    },
+    {
       title: "School IT Support & Infrastructure",
       role: "System Administrator",
       description:
