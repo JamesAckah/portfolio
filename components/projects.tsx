@@ -19,6 +19,44 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Serverless Contact Form with Terraform and GitHub Actions",
+      role: "DevOps Engineer",
+      description:
+        "Implemented a fully automated serverless contact form using AWS Lambda, API Gateway, and SES, with infrastructure as code using Terraform and continuous deployment through GitHub Actions.",
+      tech: ["AWS Lambda", "API Gateway", "SES", "Terraform", "GitHub Actions", "Node.js"],
+      liveLink: null,
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      achievements: [
+        "Automated infrastructure provisioning using Terraform",
+        "Implemented continuous deployment with GitHub Actions",
+        "Set up secure email handling with AWS SES",
+        "Created serverless architecture reducing operational overhead",
+      ],
+      challenge:
+        "Creating a secure and scalable contact form solution that requires minimal maintenance and zero server management.",
+      solution:
+        "Implemented a serverless architecture using AWS Lambda and API Gateway, with infrastructure as code for easy replication and maintenance.",
+    },
+    {
+      title: "Authentication & Deployment with AWS Amplify & Cognito",
+      role: "DevOps Engineer",
+      description:
+        "Implemented secure user authentication for web applications using AWS Amplify and Amazon Cognito, providing scalable authentication management and streamlined deployment processes.",
+      tech: ["AWS Amplify", "Amazon Cognito", "S3", "CloudShell", "IAM", "OAuth"],
+      liveLink: null,
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      achievements: [
+        "Implemented secure user authentication with Cognito",
+        "Set up automated deployment pipeline with Amplify",
+        "Configured self-service account recovery",
+        "Integrated OAuth and SAML protocols",
+      ],
+      challenge:
+        "Creating a secure and scalable authentication system that supports multiple protocols while maintaining ease of use.",
+      solution:
+        "Leveraged AWS Amplify for deployment and Amazon Cognito for authentication, implementing best practices for security and user management.",
+    },
+    {
       title: "Deploying a WordPress Application Using AWS CodeDeploy",
       role: "DevOps Engineer",
       description:

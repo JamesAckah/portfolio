@@ -6,25 +6,28 @@ import { Calendar, Clock, ArrowRight } from "lucide-react"
 export default function BlogPreview() {
   const blogPosts = [
     {
-      title: "Setting Up a CI/CD Pipeline with GitHub Actions",
-      description: "Learn how to automate your deployment process using GitHub Actions with this step-by-step guide.",
-      date: "May 10, 2024",
-      readTime: "8 min read",
-      tags: ["DevOps", "CI/CD", "GitHub"],
-    },
-    {
-      title: "AWS S3 vs EC2 for Website Hosting",
-      description: "Compare the pros and cons of using S3 static hosting versus EC2 instances for your web projects.",
-      date: "April 22, 2024",
-      readTime: "6 min read",
-      tags: ["AWS", "Hosting", "Cloud"],
-    },
-    {
-      title: "Terraform Best Practices for Beginners",
-      description: "Essential tips for those getting started with Infrastructure as Code using Terraform.",
-      date: "March 15, 2024",
+      title: "Empowering Authentication & Deployment with AWS Amplify & Cognito",
+      description: "Learn how to implement secure user authentication using AWS Amplify and Amazon Cognito for your web applications.",
+      date: "June 25, 2024",
       readTime: "10 min read",
-      tags: ["Terraform", "IaC", "DevOps"],
+      tags: ["AWS", "Amplify", "Cognito", "Authentication", "DevOps", "Security"],
+      link: "https://medium.com/@jamesblay80/empowering-authentication-deployment-with-aws-amplify-cognito-bd5b5c41ffbb?source=user_profile_page---------1-------------52d4aca5137e----------------------",
+    },
+    {
+      title: "How to create an SNS alert",
+      description: "A step-by-step guide on setting up Amazon SNS for creating alerts and notifications.",
+      date: "June 20, 2024",
+      readTime: "7 min read",
+      tags: ["AWS", "SNS", "Monitoring", "Alerting", "Cloud"],
+      link: "https://medium.com/@jamesblay80/how-to-create-an-sns-alert-2fbbe427a2d2?source=user_profile_page---------2-------------52d4aca5137e----------------------",
+    },
+    {
+      title: "How to automate backup from EC2 to S3 bucket",
+      description: "Learn how to automate the process of backing up your EC2 instances to an S3 bucket for disaster recovery.",
+      date: "June 15, 2024",
+      readTime: "12 min read",
+      tags: ["AWS", "EC2", "S3", "Backup", "Automation", "Disaster Recovery"],
+      link: "https://medium.com/@jamesblay80/how-to-automate-backup-from-ec2-to-s3-bucket-6d86edd27b30?source=user_profile_page---------0-------------52d4aca5137e----------------------",
     },
   ]
 
@@ -63,9 +66,11 @@ export default function BlogPreview() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button variant="ghost" size="sm" className="text-xs">
-                  Read more
-                  <ArrowRight className="h-3 w-3 ml-1" />
+                <Button variant="ghost" size="sm" className="text-xs" asChild>
+                  <a href={post.link} target="_blank" rel="noopener noreferrer">
+                    Read more
+                    <ArrowRight className="h-3 w-3 ml-1" />
+                  </a>
                 </Button>
               </CardFooter>
             </Card>
