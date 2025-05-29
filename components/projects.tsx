@@ -39,7 +39,7 @@ export default function Projects() {
         "OpenSearch/ELK Stack",
       ],
       liveLink: null,
-      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      githubLink: "https://github.com/JamesAckah/High-Availability-IaC-Project",
       achievements: [
         "Designed and deployed a highly available web application infrastructure on ECS Fargate across multiple Availability Zones.",
         "Implemented robust security measures following AWS best practices, including IAM roles, VPC design, and data encryption.",
