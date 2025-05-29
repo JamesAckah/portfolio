@@ -96,7 +96,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://devopsbyjames.dalijaytechhub.online"
+                  href="https://medium.com/@jamesblay8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
