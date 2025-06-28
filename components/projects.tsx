@@ -58,7 +58,7 @@ export default function Projects() {
         "Implemented a fully automated serverless contact form using AWS Lambda, API Gateway, and SES, with infrastructure as code using Terraform and continuous deployment through GitHub Actions.",
       tech: ["AWS Lambda", "API Gateway", "SES", "Terraform", "GitHub Actions", "Node.js"],
       liveLink: null,
-      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-10",
       achievements: [
         "Automated infrastructure provisioning using Terraform",
         "Implemented continuous deployment with GitHub Actions",
@@ -77,7 +77,7 @@ export default function Projects() {
         "Implemented secure user authentication for web applications using AWS Amplify and Amazon Cognito, providing scalable authentication management and streamlined deployment processes.",
       tech: ["AWS Amplify", "Amazon Cognito", "S3", "CloudShell", "IAM", "OAuth"],
       liveLink: null,
-      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/blob/main/DEVOPS-PROJECT-07",
       achievements: [
         "Implemented secure user authentication with Cognito",
         "Set up automated deployment pipeline with Amplify",
@@ -96,7 +96,7 @@ export default function Projects() {
         "Implemented a fully automated deployment pipeline for a WordPress application using AWS CodeDeploy, ensuring zero-downtime deployments and automated rollbacks.",
       tech: ["AWS CodeDeploy", "EC2", "S3", "IAM", "CloudShell", "WordPress"],
       liveLink: "http://ec2-34-239-115-14.compute-1.amazonaws.com/WordPress",
-      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      githubLink: "https://github.com/JamesAckah/DevOpsProjects/blob/main/DEVOPS-PROJECT-08",
       achievements: [
         "Implemented automated deployment pipeline reducing deployment time by 80%",
         "Achieved zero-downtime deployments using CodeDeploy's deployment strategies",
@@ -187,8 +187,8 @@ export default function Projects() {
       description:
         "Designed and implemented a high availability and disaster recovery solution on AWS, ensuring business continuity and meeting strict uptime and recovery objectives.",
       tech: ["AWS", "Serverless", "S3", "Route 53", "Lambda", "CloudFront"],
-      liveLink: null,
-      githubLink: "https://github.com/JamesAckah/DevOpsProjects/tree/main/DEVOPS-PROJECT-11",
+      liveLink: https://primary-frontend-ndwmlyec.s3.us-east-1.amazonaws.com/index.html,
+      githubLink: "https://github.com/JamesAckah/High_Availability_Serverless_App",
       achievements: [
         "Met 99.99% uptime target for a critical e-commerce platform",
         "Achieved 15 minutes Recovery Time Objective (RTO)",
@@ -197,7 +197,7 @@ export default function Projects() {
       challenge:
         "Meeting stringent uptime and recovery objectives for a critical e-commerce platform with zero downtime tolerance.",
       solution:
-        "Implemented a multi-region architecture leveraging AWS serverless services (S3, Route 53, Lambda, CloudFront), automated backups, and defined failover procedures.",
+        "Implemented a multi-region architecture leveraging AWS serverless services (S3, Route 53, Lambda, CloudFront, Dynamodb), automated backups, and defined failover procedures.",
       caseStudy: {
         title: "Case Study: Acme Corporation's High Availability Needs",
         requirements: [
