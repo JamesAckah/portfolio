@@ -6,7 +6,7 @@ export default function Journey() {
 
   const timelineItems = [
        {
-      year: "2025 (Future)",
+      year: "2025 (Planned)",
       title: "MAS-ITM with IT Infrastructure Specialization",
       description:
         "Planned to Pursue a Master's degree in Information Technology and Management focused on system automation, cloud architecture, networking, and IT strategy to support enterprise-scale infrastructure roles.",
