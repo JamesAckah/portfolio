@@ -5,6 +5,12 @@ export default function Journey() {
   const [active, setActive] = useState<number>(0)
 
   const timelineItems = [
+       {
+      year: "2025 (Future)",
+      title: "MAS-ITM with IT Infrastructure Specialization",
+      description:
+        "Planned to Pursue a Master's degree in Information Technology and Management focused on system automation, cloud architecture, networking, and IT strategy to support enterprise-scale infrastructure roles.",
+    },
     {
       year: "Present",
       title: "Expanding Cloud Expertise",
@@ -13,27 +19,29 @@ export default function Journey() {
     },
     {
       year: "2024",
-      title: "Freelance DevOps Consultant",
+      title: "Freelance WordPress & AWS Website Deployment",
       description:
-        "Began offering freelance DevOps consulting services, helping small businesses implement better infrastructure and automation.",
+        "Designed and deployed websites like Dalijay Tech Hub using AWS EC2, Route 53. Combined frontend customization with secure cloud hosting.",
     },
     {
-      year: "2023",
+      year: "2024",
       title: "AWS Certification",
+      icon: "📜"
       description:
         "Obtained AWS Cloud Practitioner certification and expanded my skills in cloud infrastructure and automation.",
     },
     {
-      year: "2022",
-      title: "DevOps Internship",
+      year: "2024",
+      title: "DevOps Internship(Remote)",
       description:
         "Joined ExLearn Technologies as a remote DevOps intern, where I built my first CI/CD pipelines and managed AWS infrastructure.",
     },
     {
       year: "2021",
-      title: "Started as Junior IT Support",
+      title: "System Administrator (On-prem IT Support)",
+       icon: "🖥️",      
       description:
-        "Began my career providing technical support for a local school, managing daily IT operations and setting up computer labs.",
+        "Managed IT operations for a Junior High School — installed systems, resolved network issues, managed user accounts, and trained staff in digital tools.",
     },
   ]
 
