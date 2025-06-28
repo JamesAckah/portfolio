@@ -13,13 +13,15 @@ export default function Journey() {
     },
     {
       year: "Present",
-      title: "Expanding Cloud Expertise",
-      description:
-        "Currently deepening my knowledge in multi-cloud environments and modern container orchestration with Kubernetes.",
+      title: "ALX Cloud Computing Program",
+    icon: "🚀",
+    description:
+        "Currently enrolled in the ALX Cloud Computing program, to deepen my knowledge and understanding on AWS Core Services ad gain hands-on experience with AWS services, CI/CD pipelines, and infrastructure automation.",
     },
     {
       year: "2024",
       title: "Freelance WordPress & AWS Website Deployment",
+       icon: "💼",
       description:
         "Designed and deployed websites like Dalijay Tech Hub using AWS EC2, Route 53. Combined frontend customization with secure cloud hosting.",
     },
