@@ -14,7 +14,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "James Ackah-Blay | IT Support Specialist & DevOps Engineer",
   description: "Portfolio of James Ackah-Blay, IT Support Specialist and DevOps Engineer",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: 'any',
+      },
+      {
+        url: '/favicon.icon.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+    ],
+    apple: '/favicon.icon.png',
+  },
 }
 
 export default function RootLayout({
