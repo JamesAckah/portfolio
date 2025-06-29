@@ -187,7 +187,7 @@ export default function Projects() {
       description:
         "Designed and implemented a high availability and disaster recovery solution on AWS, ensuring business continuity and meeting strict uptime and recovery objectives.",
       tech: ["AWS", "Serverless", "S3", "Route 53", "Lambda", "CloudFront"],
-      liveLink: https://primary-frontend-ndwmlyec.s3.us-east-1.amazonaws.com/index.html,
+      liveLink: "https://primary-frontend-ndwmlyec.s3.us-east-1.amazonaws.com/index.html",
       githubLink: "https://github.com/JamesAckah/High_Availability_Serverless_App",
       achievements: [
         "Met 99.99% uptime target for a critical e-commerce platform",
