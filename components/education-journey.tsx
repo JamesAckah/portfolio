@@ -17,30 +17,7 @@ export default function EducationJourney() {
       description:
         "Completed an Advanced Diploma in Accounting and Finance, building a strong foundation in financial principles and business management.",
     },
-    {
-      year: "2024",
-      title: "Google Data Analytics Certificate",
-      description:
-        "Mastered data analysis techniques, including data preparation, visualization, and using tools to derive actionable insights.",
-    },
-    {
-      year: "2023",
-      title: "AWS Certified Cloud Practitioner",
-      description:
-        "Achieved certification validating understanding of AWS cloud concepts, services, security, architecture, and pricing models.",
-    },
-    {
-      year: "2023",
-      title: "IBM Certificate in Cloud Computing",
-      description:
-        "Developed expertise in cloud technologies, deployment models, and IBM cloud services through this specialized certification.",
-    },
-    {
-      year: "2021",
-      title: "Google IT Support Certificate",
-      description:
-        "Gained comprehensive knowledge in IT fundamentals, networking, operating systems, system administration, and security.",
-    },
+   
   ]
 
   return (
