@@ -1,7 +1,7 @@
 "use client"
-import { useState, useRef } from "react"
+import { useState } from "react"
 import type React from "react"
-import emailjs from "@emailjs/browser"
+import { sendContactEmail } from "@/app/actions"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,15 +11,15 @@ import { Mail, Linkedin, Send, Check, AlertCircle } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 export default function Contact() {
-  const formRef = useRef<HTMLFormElement>(null)
   const [formState, setFormState] = useState({
-    user_name: "",
-    user_email: "",
+    name: "",
+    email: "",
     subject: "",
     message: "",
   })
 
   const [submitStatus, setSubmitStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
@@ -31,36 +31,37 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitStatus("loading")
+    setErrorMessage("")
 
     try {
-      // Send email using EmailJS
-      await emailjs.sendForm(
-        "service_5m3n4yk", // Service ID
-        "template_0zkqpgb", // Template ID
-        formRef.current!,
-        "pTljkOgGEKQXg8tfH", // Public Key
-      )
+      const result = await sendContactEmail(formState)
 
-      setSubmitStatus("success")
-
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setFormState({
-          user_name: "",
-          user_email: "",
-          subject: "",
-          message: "",
-        })
-        setSubmitStatus("idle")
-      }, 3000)
+      if (result.success) {
+        setSubmitStatus("success")
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFormState({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          })
+          setSubmitStatus("idle")
+        }, 3000)
+      } else {
+        setSubmitStatus("error")
+        setErrorMessage(result.error || "Failed to send message")
+      }
     } catch (error) {
       console.error("Form submission error:", error)
       setSubmitStatus("error")
+      setErrorMessage("Something went wrong. Please try again.")
 
-      // Reset error state after 3 seconds
+      // Reset error state after 5 seconds
       setTimeout(() => {
         setSubmitStatus("idle")
-      }, 3000)
+        setErrorMessage("")
+      }, 5000)
     }
   }
 
@@ -144,35 +145,35 @@ export default function Contact() {
                   <AlertCircle className="h-4 w-4" />
                   <AlertTitle>Error</AlertTitle>
                   <AlertDescription>
-                    Something went wrong. Please try again or contact me directly via email.
+                    {errorMessage}
                   </AlertDescription>
                 </Alert>
               ) : (
-                <form className="space-y-4" onSubmit={handleSubmit} ref={formRef}>
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label htmlFor="user_name" className="text-sm font-medium">
+                      <label htmlFor="name" className="text-sm font-medium">
                         Name
                       </label>
                       <Input
-                        id="user_name"
-                        name="user_name"
+                        id="name"
+                        name="name"
                         placeholder="Your name"
-                        value={formState.user_name}
+                        value={formState.name}
                         onChange={handleChange}
                         required
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="user_email" className="text-sm font-medium">
+                      <label htmlFor="email" className="text-sm font-medium">
                         Email
                       </label>
                       <Input
-                        id="user_email"
-                        name="user_email"
+                        id="email"
+                        name="email"
                         type="email"
                         placeholder="Your email"
-                        value={formState.user_email}
+                        value={formState.email}
                         onChange={handleChange}
                         required
                       />

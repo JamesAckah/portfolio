@@ -5,7 +5,6 @@ import JourneyTabs from "@/components/journey-tabs"
 import Skills from "@/components/skills"
 import Projects from "@/components/projects"
 import Testimonials from "@/components/testimonials"
-import CertificatesQualitiesTabs from "@/components/certificates-qualities-tabs"
 import BlogPreview from "@/components/blog-preview"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
@@ -22,10 +21,7 @@ export default function HomePage() {
           <About />
           <ElevatorPitchYouTube />
           <JourneyTabs />
-          <div className="flex flex-col lg:flex-row gap-8">
-            <Skills className="flex-1" />
-            <CertificatesQualitiesTabs className="flex-1" />
-          </div>
+          <Skills />
           <Projects />
           <Testimonials />
           <BlogPreview />
