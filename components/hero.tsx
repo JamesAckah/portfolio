@@ -75,7 +75,7 @@ export default function Hero() {
             <div className="flex items-center gap-1 rounded hover:ring-2 hover:ring-primary hover:ring-opacity-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-all duration-200">
               <Linkedin size={16} />
               <a
-                href="https://linkedin.com/in/james-ackah-blay"
+                href="https://linkedin.com/in/jamesackahblay"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
