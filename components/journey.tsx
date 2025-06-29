@@ -5,47 +5,47 @@ export default function Journey() {
   const [active, setActive] = useState<number>(0)
 
   const timelineItems = [
-       {
-      year: "2025 (Planned)",
-      title: "MAS-ITM with IT Infrastructure Specialization",
-      description:
-        "Planned to Pursue a Master's degree in Information Technology and Management focused on system automation, cloud architecture, networking, and IT strategy to support enterprise-scale infrastructure roles.",
-    },
-    {
-      year: "Present",
-      title: "ALX Cloud Computing Program",
-      icon: "🚀",
-      description:
-        "Currently enrolled in the ALX Cloud Computing program, to deepen my knowledge and understanding on AWS Core Services ad gain hands-on experience with AWS services, CI/CD pipelines, and infrastructure automation.",
-    },
-    {
-      year: "2024",
-      title: "Freelance WordPress & AWS Website Deployment",
-       icon: "💼",
-      description:
-        "Designed and deployed websites like Dalijay Tech Hub using AWS EC2, Route 53. Combined frontend customization with secure cloud hosting.",
-    },
-    {
-      year: "2024",
-      title: "AWS Certification",
-      icon: "📜",
-      description:
-        "Obtained AWS Cloud Practitioner certification and expanded my skills in cloud infrastructure and automation.",
-    },
-    {
-      year: "2024",
-      title: "DevOps Internship(Remote)",
-      description:
-        "Joined ExLearn Technologies as a remote DevOps intern, where I built my first CI/CD pipelines and managed AWS infrastructure.",
-    },
-    {
-      year: "2021",
-      title: "System Administrator (On-prem IT Support)",
-       icon: "🖥️",      
-      description:
-        "Managed IT operations for a Junior High School — installed systems, resolved network issues, managed user accounts, and trained staff in digital tools.",
-    },
-  ]
+  {
+    year: "2025 (Planned)",
+    title: "MAS-ITM with IT Infrastructure Specialization",
+    description:
+      "Planned to Pursue a Master's degree in Information Technology and Management focused on system automation, cloud architecture, networking, and IT strategy to support enterprise-scale infrastructure roles.",
+  },
+  {
+    year: "Present",
+    title: "ALX Cloud Computing Program",
+    icon: "🚀",
+    description:
+      "Currently enrolled in the ALX Cloud Computing program, to deepen my knowledge and understanding on AWS Core Services ad gain hands-on experience with AWS services, CI/CD pipelines, and infrastructure automation.",
+  },
+  {
+    year: "2024",
+    title: "Freelance WordPress & AWS Website Deployment",
+    icon: "💼",
+    description:
+      "Designed and deployed websites like Dalijay Tech Hub using AWS EC2, Route 53. Combined frontend customization with secure cloud hosting.",
+  },
+  {
+    year: "2024",
+    title: "AWS Certification",
+    icon: "📜", // ✅ this comma was missing in your code
+    description:
+      "Obtained AWS Cloud Practitioner certification and expanded my skills in cloud infrastructure and automation.",
+  },
+  {
+    year: "2024",
+    title: "DevOps Internship(Remote)",
+    description:
+      "Joined ExLearn Technologies as a remote DevOps intern, where I built my first CI/CD pipelines and managed AWS infrastructure.",
+  },
+  {
+    year: "2021",
+    title: "System Administrator (On-prem IT Support)",
+    icon: "🖥️",
+    description:
+      "Managed IT operations for a Junior High School — installed systems, resolved network issues, managed user accounts, and trained staff in digital tools.",
+  },
+]
 
   return (
     <section id="journey" className="py-16 scroll-mt-20">
