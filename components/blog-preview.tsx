@@ -79,7 +79,7 @@ export default function BlogPreview() {
 
         <div className="flex justify-center mt-6">
           <Button variant="outline" asChild>
-            <a href="https://devopsbyjames.dalijaytechhub.online" target="_blank" rel="noopener noreferrer">
+            <a href="https://medium.com/@jamesblay80" target="_blank" rel="noopener noreferrer">
               View All Articles
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
