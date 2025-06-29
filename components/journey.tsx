@@ -14,8 +14,8 @@ export default function Journey() {
     {
       year: "Present",
       title: "ALX Cloud Computing Program",
-    icon: "🚀",
-    description:
+      icon: "🚀",
+      description:
         "Currently enrolled in the ALX Cloud Computing program, to deepen my knowledge and understanding on AWS Core Services ad gain hands-on experience with AWS services, CI/CD pipelines, and infrastructure automation.",
     },
     {
@@ -28,7 +28,7 @@ export default function Journey() {
     {
       year: "2024",
       title: "AWS Certification",
-      icon: "📜"
+      icon: "📜",
       description:
         "Obtained AWS Cloud Practitioner certification and expanded my skills in cloud infrastructure and automation.",
     },
